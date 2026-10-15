@@ -1,90 +1,119 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class RangedEnemy : MonoBehaviour
 {
+    [Header("Movement")]
     public Transform target;
     public float speed = 3f;
-    public float rotateSpeed = 0.0035f;
+    public float rotateSpeed = 200f; 
+
+    [Header("Combat Ranges")]
+    public float distanceToShoot = 8f; 
+    public float distanceToStop = 5f;  
+    public float distanceToFlee = 3f;  
+
+    [Header("Weapon Settings")]
+    public GameObject bulletPrefab; 
+    public Transform firingPoint;   
+    public float fireRate = 1f;
+    private float timeToFire;
+
     private Rigidbody2D rb;
 
-    public float distanceToShoot = 5f;
-    public float distanceToStop = 2f;
-
-    public float fireRate;
-    public float timeToFire;
-
-    public Transform firingPoint;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        timeToFire = 0f;
     }
 
-    // Update is called once per frame
     public void Update()
     {
-        if(!target)
+        if (!target)
         {
             GetTarget();
-        }
-        else
-        {
-            RotateTowardsTarget();
+            return; 
         }
 
-        if (Vector2.Distance(target.position, transform.position) <= distanceToStop)
-        {
-            Shoot();
-        }
-    }
-    private void Shoot()
-    {
-        if(timeToFire <= 0f)
-        {
-            Debug.Log("Shot bruv");
-            timeToFire = fireRate;
-        }
-        else
+        if (timeToFire > 0f)
         {
             timeToFire -= Time.deltaTime;
+        }
+
+        float currentDistance = Vector2.Distance(target.position, transform.position);
+
+        if (currentDistance <= distanceToShoot)
+        {
+            Shoot();
         }
     }
 
     private void FixedUpdate()
     {
-        if (Vector2.Distance(target.position, transform.position) >= distanceToStop)
+        if (!target) 
         {
-            rb.linearVelocity = transform.up * speed;
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
+        RotateTowardsTargetPhysics();
+
+        Vector2 directionToPlayer = ((Vector2)target.position - (Vector2)transform.position).normalized;
+        float currentDistance = Vector2.Distance(target.position, transform.position);
+
+        if (currentDistance < distanceToFlee)
+        {
+            rb.linearVelocity = -directionToPlayer * speed; 
+        }
+        else if (currentDistance > distanceToStop)
+        {
+            rb.linearVelocity = directionToPlayer * speed;
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero; 
         }
     }
 
-    private void RotateTowardsTarget()
+    private void RotateTowardsTargetPhysics()
     {
         Vector2 targetDirection = target.position - transform.position;
-        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg - 90f;
-        Quaternion q = Quaternion.Euler(new Vector3(0, 0, angle));
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, q, rotateSpeed);
+        float targetAngle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg - 90f;
+        float smoothedAngle = Mathf.MoveTowardsAngle(rb.rotation, targetAngle, rotateSpeed * Time.fixedDeltaTime);
+        rb.MoveRotation(smoothedAngle);
+    }
+
+    private void Shoot()
+    {
+        if (timeToFire <= 0f)
+        {
+            Debug.Log("Shot bruv");
+            
+            if (bulletPrefab != null && firingPoint != null)
+            {
+                Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
+            }
+
+            timeToFire = fireRate; 
+        }
     }
 
     private void GetTarget()
     {
-        if(GameObject.FindGameObjectWithTag("Player"))
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            target = player.transform;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             Destroy(other.gameObject);
             target = null;
         }
-        else if(other.gameObject.CompareTag("Bullet"))
+        else if (other.gameObject.CompareTag("Bullet"))
         {
             Destroy(other.gameObject);
             Destroy(gameObject);
