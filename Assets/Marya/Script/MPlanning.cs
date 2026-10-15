@@ -49,24 +49,7 @@ public class MPlanning : MonoBehaviour
 
     //FOR TESTING ONLY. the below code will eventually go into their own script
 
-    [SerializeField] private GameObject[] ShopObjects;
 
-
-    private void Shop()
-    {
-        
-            
-
-        foreach (GameObject ShopObject in ShopObjects)
-        {
-            ShopObject.SetActive(false);
-        }
-    }
-
-    private void Start()
-    {
-        Shop();
-    }
 
 
 }
