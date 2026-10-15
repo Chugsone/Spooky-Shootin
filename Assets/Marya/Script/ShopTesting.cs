@@ -9,11 +9,9 @@ public class ShopTesting : MonoBehaviour
     private void Shop()
     {
 
-
-
         foreach (GameObject ShopObject in ShopObjects)
         {
-            ShopObject.SetActive(false);
+            ShopObject.SetActive(true);
         }
     }
 
