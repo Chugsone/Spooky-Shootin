@@ -1,4 +1,5 @@
 using UnityEngine;
+//using static UnityEditor.Progress;
 
 public class MPlanning : MonoBehaviour
 {
@@ -22,10 +23,21 @@ public class MPlanning : MonoBehaviour
     private void Shop()
     {
     Activate shop;(for loop and connect all the items)
+    [serializeFeild] private GameObject[] ShopObject; 
 
+     foreach (GameObject ShopObject in ShopObjects)
+        {
+            ShopObject.SetActive(true);
+        }
 
+        
+     foreach(GameObject ShopObject in ShopObjects)
+        {
+            ShopObject.SetActive(false);
+        }
     levelUp()
     }
+
 
     private void levelUp()
     {
@@ -34,6 +46,27 @@ public class MPlanning : MonoBehaviour
     
     }
     */
+
+    //FOR TESTING ONLY. the below code will eventually go into their own script
+
+    [SerializeField] private GameObject[] ShopObjects;
+
+
+    private void Shop()
+    {
+        
+            
+
+        foreach (GameObject ShopObject in ShopObjects)
+        {
+            ShopObject.SetActive(false);
+        }
+    }
+
+    private void Start()
+    {
+        Shop();
+    }
 
 
 }
