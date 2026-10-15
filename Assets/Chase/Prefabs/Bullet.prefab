@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7991047576731193863}
   m_Layer: 6
   m_Name: Bullet
-  m_TagString: Bullet
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e34fba27f62fbf498b3defd01a1eb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  speed: 13.8
+  speed: 10
   lifeTime: 3
 --- !u!60 &8043936263360875739
 PolygonCollider2D:

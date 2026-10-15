@@ -119,4 +119,5 @@ public class RangedEnemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
 }
