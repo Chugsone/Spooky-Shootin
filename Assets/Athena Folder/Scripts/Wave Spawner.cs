@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject enemyOne;
+    public GameObject enemyTwo;
+    public GameObject bossEnemy;
+
+    public int numberOfBosses = 0;
     public int numberOfEnemies = 3;
     public int currentWave = 1;
-    public GameObject bossEnemy;
-    public int numberOfBosses = 0;
+    public int enemyPerWaveIncrease = 2;
+
+    public float radNum = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +28,16 @@ public class WaveSpawner : MonoBehaviour
     {
         for (int i =0; i < numberOfEnemies; i++)
         {
-            Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
+            radNum = Random.Range(1, 4);
+            Debug.Log(radNum);
+            if(radNum == 1)
+            {
+            Instantiate(enemyTwo, gameObject.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(enemyOne, gameObject.transform.position, Quaternion.identity);
+            }
         }
         if(currentWave % 5 == 0)
         {
@@ -33,7 +47,7 @@ public class WaveSpawner : MonoBehaviour
                 Instantiate(bossEnemy, gameObject.transform.position, Quaternion.identity);
             }
         }
-        numberOfEnemies = numberOfEnemies + 2;
+        numberOfEnemies = numberOfEnemies + enemyPerWaveIncrease;
         currentWave++;
     }
 }
