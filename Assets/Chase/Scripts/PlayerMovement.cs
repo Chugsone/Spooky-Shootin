@@ -17,9 +17,12 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing;
     private bool canDash = true; 
 
+    private PlayerCombat playerCombat;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        playerCombat = GetComponent<PlayerCombat>();
     }
 
     void Update()
@@ -39,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+
+        playerCombat.MeleeDirection(moveInput);
     }
 
     public void Dash(InputAction.CallbackContext context)
