@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Wall
   - Bullet
+<<<<<<< HEAD
   - Enemy
+=======
+  - Obstacle
+>>>>>>> 5de7d2569cf0ef1372628f4e4ea43ac219f9f24d
   layers:
   - Default
   - TransparentFX

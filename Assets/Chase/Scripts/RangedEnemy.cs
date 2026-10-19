@@ -108,12 +108,7 @@ public class RangedEnemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Destroy(other.gameObject);
-            target = null;
-        }
-        else if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Bullet"))
         {
             Destroy(other.gameObject);
             Destroy(gameObject);

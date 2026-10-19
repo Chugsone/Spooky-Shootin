@@ -76,4 +76,12 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(1);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (IsInLayerMask(collision.gameObject, targetLayers))
+        {
+            TakeDamage(1);
+        }
+    }
 }
