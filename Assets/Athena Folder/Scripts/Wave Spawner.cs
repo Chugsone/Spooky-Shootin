@@ -11,34 +11,38 @@ public class WaveSpawner : MonoBehaviour
     public int currentWave = 1;
     public int enemyPerWaveIncrease = 2;
 
-    public float radNum = 0f;
+    private float randomChance = 0f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public float minX = -5f;
+    public float maxX = 5f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float minY = -5f;
+    public float maxY = 5f;
+
+
     public void SpawnWave()
     {
+        float xPos, yPos;
+        Vector2 pos;
+
         for (int i =0; i < numberOfEnemies; i++)
         {
-            radNum = Random.Range(1, 4);
-            Debug.Log(radNum);
-            if(radNum == 1)
+            randomChance = Random.Range(1, 4);
+
+            xPos = Random.Range(minX, maxX);
+            yPos = Random.Range(minY, maxY);
+            pos = new Vector2(xPos, yPos);
+
+            if (randomChance == 1)
             {
-            Instantiate(enemyTwo, gameObject.transform.position, Quaternion.identity);
+            Instantiate(enemyTwo, pos, Quaternion.identity);
             }
             else
             {
-                Instantiate(enemyOne, gameObject.transform.position, Quaternion.identity);
+                Instantiate(enemyOne, pos, Quaternion.identity);
             }
         }
+
         if(currentWave % 5 == 0)
         {
             numberOfBosses++;
@@ -47,6 +51,7 @@ public class WaveSpawner : MonoBehaviour
                 Instantiate(bossEnemy, gameObject.transform.position, Quaternion.identity);
             }
         }
+
         numberOfEnemies = numberOfEnemies + enemyPerWaveIncrease;
         currentWave++;
     }
