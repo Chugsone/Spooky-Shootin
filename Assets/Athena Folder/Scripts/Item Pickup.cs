@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
+    public CandycornManager cm;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,9 +17,10 @@ public class ItemPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Candycorn"))
         {
-            Destroy(gameObject);
+            Destroy(other.gameObject);
+            cm.candyCount++;
         }
     }
 }
