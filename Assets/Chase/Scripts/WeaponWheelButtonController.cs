@@ -30,6 +30,7 @@ public class WeaponWheelButtonController : MonoBehaviour
     public void Selected()
     {
         selected = true;
+        WeaponWheelController.weaponID = ID;
     }
 
     public void Deselected()
@@ -38,6 +39,11 @@ public class WeaponWheelButtonController : MonoBehaviour
     }
 
     public void HoverEnter()
+    {
+        anim.SetBool("Hover", true);
+        itemText.text = itemName;
+    }
+    public void HoverExit()
     {
         anim.SetBool("Hover", false);
         itemText.text = "";
