@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Obstacle
   - Enemy
+  - Obstacle
+  - Wall
   - Bullet
-  - Candycorn
   layers:
   - Default
   - TransparentFX
@@ -15,8 +15,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShopTesting : MonoBehaviour
+public class SetActive : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private GameObject[] ShopObjects; // what objects are set active or not
