@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Buying : MonoBehaviour
 {
+    [Header(CurrentLvl)]
     public int HealthLvl = 1;
     public int SpeedLvl = 1;
 
@@ -12,6 +13,7 @@ public class Buying : MonoBehaviour
     public int MeleeRangeLvl = 1;
     public int RangeRangeLvl = 1;
 
+    [Header(MaxLvl)]
     // max lvl
     public int MaxHealthLvl = 6;
     public int MaxSpeedLvl = 6;
