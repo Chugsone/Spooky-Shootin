@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Wall
   - Bullet
+  - Candycorn
   layers:
   - Default
   - TransparentFX
