@@ -50,6 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyHealth: 1
+  itemDrop: {fileID: 3235994496619900480, guid: 16880743b2f84c843ac3ed59afe31217, type: 3}
+  minDrop: 1
+  maxDrop: 5
+  deathSound: {fileID: 8300000, guid: ea5ba946e51628a4a8c99ff47a3d7a07, type: 3}
 --- !u!212 &6173122642493047615
 SpriteRenderer:
   serializedVersion: 3
