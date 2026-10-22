@@ -138,10 +138,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 275584679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11a04ab21ab11f549bca8dfad1d2b423, type: 3}
+  m_Script: {fileID: 11500000, guid: 1580a4f1bce77de418e93667a7772ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Store
-  Health: 0
+  HealthLvl: 0
+  SpeedLvl: 0
+  MeleeDmgLvl: 0
+  RangeDmgLvl: 0
+  MeleeRangeLvl: 0
+  RangeRangeLvl: 0
+  MaxHealthLvl: 6
+  MaxSpeedLvl: 6
+  MaxMeleeDmgLvl: 6
+  MaxRangeDmgLvl: 6
+  MaxMeleeRangeLvl: 4
+  MaxRangeRangeLvl: 4
 --- !u!1 &930210989
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,10 +270,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9716981, g: 0.7104397, b: 0.7104397, a: 1}
-    m_PressedColor: {r: 0.6981132, g: 0.023050921, b: 0.023050921, a: 1}
-    m_SelectedColor: {r: 0.5133945, g: 0.6165187, b: 0.7830189, a: 1}
-    m_DisabledColor: {r: 0.254717, g: 0.14778392, b: 0.14778392, a: 0.5019608}
+    m_HighlightedColor: {r: 0.71162915, g: 1, b: 0.69411767, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 0.41509432, g: 0.21733712, b: 0.21733712, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -281,9 +292,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 1580a4f1bce77de418e93667a7772ca9, type: 3}
-        m_TargetAssemblyTypeName: Store, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 275584681}
+        m_TargetAssemblyTypeName: Buying, Assembly-CSharp
+        m_MethodName: HealthUpgradeButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -813,6 +824,18 @@ PrefabInstance:
     - target: {fileID: 4885104604191823622, guid: 7e9f53088227051409accc1feee760af, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965591443334774311, guid: 7e9f53088227051409accc1feee760af, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965591443334774311, guid: 7e9f53088227051409accc1feee760af, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4965591443334774311, guid: 7e9f53088227051409accc1feee760af, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4965591443334774311, guid: 7e9f53088227051409accc1feee760af, type: 3}
       propertyPath: m_RaycastTarget
