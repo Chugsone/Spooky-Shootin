@@ -48,4 +48,9 @@ public class WeaponWheelButtonController : MonoBehaviour
         anim.SetBool("Hover", false);
         itemText.text = "";
     }
+    public void SelectWeapon(int id)
+    {
+        int weaponID = id;
+        Debug.Log("Weapon switched to ID: " + id);
+    }
 }

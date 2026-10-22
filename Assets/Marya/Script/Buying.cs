@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Buying : MonoBehaviour
 {
+    [Header("CurrentLvl")]
     public int HealthLvl = 1;
     public int SpeedLvl = 1;
 
@@ -12,6 +13,7 @@ public class Buying : MonoBehaviour
     public int MeleeRangeLvl = 1;
     public int RangeRangeLvl = 1;
 
+    [Header("MaxLvl")]
     // max lvl
     public int MaxHealthLvl = 6;
     public int MaxSpeedLvl = 6;
@@ -22,6 +24,19 @@ public class Buying : MonoBehaviour
     public int MaxMeleeRangeLvl = 4;
     public int MaxRangeRangeLvl = 4;
 
+    private void Update()
+    {
+        HealthLvl = Mathf.Clamp(HealthLvl, 1, MaxHealthLvl);
+        SpeedLvl = Mathf.Clamp(SpeedLvl, 1, MaxSpeedLvl);
+
+        MeleeDmgLvl = Mathf.Clamp(MeleeDmgLvl, 1, MaxMeleeDmgLvl);
+        RangeDmgLvl = Mathf.Clamp(RangeDmgLvl, 1, MaxRangeDmgLvl);
+
+        MeleeRangeLvl = Mathf.Clamp(MeleeRangeLvl, 1, MaxMeleeRangeLvl);
+        RangeRangeLvl = Mathf.Clamp(RangeRangeLvl, 1, MaxRangeRangeLvl);
+    }
+
+    
     // Body levelUp buttons
     public void HealthUpgradeButton()
     {
