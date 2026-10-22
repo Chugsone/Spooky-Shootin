@@ -19,11 +19,14 @@ public class WaveSpawner : MonoBehaviour
     public float minY = -5f;
     public float maxY = 5f;
 
+    [SerializeField] private AudioClip newWaveSound;
 
     public void SpawnWave()
     {
         float xPos, yPos;
         Vector2 pos;
+
+        AudioSource.PlayClipAtPoint(newWaveSound, transform.position, 1f);
 
         for (int i =0; i < numberOfEnemies; i++)
         {
