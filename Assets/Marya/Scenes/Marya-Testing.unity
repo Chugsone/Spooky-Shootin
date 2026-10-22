@@ -141,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1580a4f1bce77de418e93667a7772ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Store
-  HealthLvl: 0
   SpeedLvl: 0
   MeleeDmgLvl: 0
   RangeDmgLvl: 0
