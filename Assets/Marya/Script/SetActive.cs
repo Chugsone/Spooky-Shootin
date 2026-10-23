@@ -3,36 +3,36 @@ using UnityEngine;
 public class SetActive : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    [SerializeField] private GameObject[] ShopObjects; // what objects are set active or not
-    [SerializeField] private bool ShopActive;// testing variable (Aka temporary)
+    [SerializeField] private GameObject[] GroupedObjects; // what objects are set active or not
+    [SerializeField] private bool ActiveState;// testing variable (Aka temporary)
 
 
-    private void Shop()
+    private void ActiveStatus()
     {
 
-        if (ShopActive == true)
+        if (ActiveState == true)
         {
-            foreach (GameObject ShopObject in ShopObjects)
+            foreach (GameObject GroupedObject in GroupedObjects)
             {
-                ShopObject.SetActive(true);
-            } 
+                GroupedObject.SetActive(true);
+            }
         }
         else
         {
-            foreach (GameObject ShopObject in ShopObjects)
+            foreach (GameObject GroupedObject in GroupedObjects)
             {
-                ShopObject.SetActive(false);
+                GroupedObject.SetActive(false);
             }
-        } 
+        }
     }
 
     private void Start()
     {
-    
+
     }
 
     public void Update()
     {
-        Shop();
+        ActiveStatus();
     }
 }

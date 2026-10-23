@@ -24,6 +24,19 @@ public class Buying : MonoBehaviour
     public int MaxMeleeRangeLvl = 4;
     public int MaxRangeRangeLvl = 4;
 
+    [Header("Lvl price")]
+
+    public int HealthLvlPrice = 1;
+    public int SpeedLvlPrice = 1;
+
+    public int MeleeDmgLvlPrice = 1;
+    public int RangeDmgLvlPrice = 1;
+
+    public int MeleeRangeLvlPrice = 1;
+    public int RangeRangeLvlPrice = 1;
+
+    public CandycornManager cm;
+
     private void Update()
     {
         HealthLvl = Mathf.Clamp(HealthLvl, 1, MaxHealthLvl);
@@ -40,8 +53,9 @@ public class Buying : MonoBehaviour
     // Body levelUp buttons
     public void HealthUpgradeButton()
     {
-        if (HealthLvl < MaxHealthLvl)
+        if (HealthLvl < MaxHealthLvl && cm.candyCount >= HealthLvlPrice)
         {
+            cm.candyCount -= HealthLvlPrice;
             HealthLvl += 1;
             Debug.Log(HealthLvl);
         }
@@ -49,30 +63,55 @@ public class Buying : MonoBehaviour
 
     public void SpeedUpgradeButton()
     {
-
+        if (SpeedLvl < MaxSpeedLvl && cm.candyCount >= SpeedLvlPrice)
+        {
+            cm.candyCount -= SpeedLvlPrice;
+            SpeedLvl += 1;
+            Debug.Log(SpeedLvl);
+        }
     }
 
 
     // damage levelUp buttons
     public void MeleeDmgUpgradeButton()
     {
-
+        if (MeleeDmgLvl < MaxMeleeDmgLvl && cm.candyCount >= MeleeDmgLvlPrice)
+        {
+            cm.candyCount -= MeleeDmgLvlPrice;
+            MeleeDmgLvl += 1;
+            Debug.Log(MeleeDmgLvl);
+        }
     }
 
     public void RangeDmgUpgradeButton()
     {
-
+        if (RangeDmgLvl < MaxRangeDmgLvl && cm.candyCount >= RangeDmgLvlPrice)
+        {
+            cm.candyCount -= RangeDmgLvlPrice;
+            RangeDmgLvl += 1;
+            Debug.Log(RangeDmgLvl);
+        }
     }
 
 
     // range levelUp buttons
     public void MeleeRangeUpgradeButton()
     {
-
+        if (MeleeRangeLvl < MaxMeleeRangeLvl && cm.candyCount >= MeleeRangeLvlPrice)
+        {
+            cm.candyCount -= MeleeRangeLvlPrice;
+            MeleeRangeLvl += 1;
+            Debug.Log(MeleeRangeLvl);
+        }
     }
 
     public void RangeRangeUpgradeButton()
     {
-
+        if (RangeRangeLvl < MaxRangeRangeLvl && cm.candyCount >= RangeRangeLvlPrice)
+        {
+            cm.candyCount -= RangeRangeLvlPrice;
+            RangeRangeLvl += 1;
+            Debug.Log(RangeRangeLvl);
+        }
     }
 }
