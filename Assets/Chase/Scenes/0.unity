@@ -859,7 +859,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 835828608}
+  - {fileID: 1573094848}
   - {fileID: 1408552735}
   m_Father: {fileID: 1261909277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1190,38 +1190,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826350188}
   m_CullTransparentMesh: 1
---- !u!1 &835828607
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 835828608}
-  m_Layer: 6
-  m_Name: PistolStuff
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &835828608
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835828607}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1573094848}
-  m_Father: {fileID: 748189935}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &882431311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2738,9 +2706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Selected
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2961,10 +2927,10 @@ MonoBehaviour:
   myWeaponID: 3
   weaponModel: {fileID: 1398399674}
   firePoint: {fileID: 1829256120}
-  bulletPrefab: {fileID: 4884666967257675825, guid: 4df5538822a99864297d420fb450e041, type: 3}
+  bulletPrefab: {fileID: 4884666967257675825, guid: a36fb7bd21bad5d40b59c3309ef96ca7, type: 3}
   fireRate: 0.8
   pelletCount: 4
-  spreadAngle: 45
+  spreadAngle: 18.9
 --- !u!1 &1437885972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3188,7 +3154,7 @@ GameObject:
   - component: {fileID: 1573094848}
   - component: {fileID: 1573094849}
   m_Layer: 6
-  m_Name: Pistol
+  m_Name: PistolStuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3209,7 +3175,7 @@ Transform:
   m_Children:
   - {fileID: 1836478250}
   - {fileID: 1326499130}
-  m_Father: {fileID: 835828608}
+  m_Father: {fileID: 748189935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -88.623}
 --- !u!114 &1573094849
 MonoBehaviour:

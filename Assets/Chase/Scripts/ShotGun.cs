@@ -6,8 +6,6 @@ public class Shotgun : MonoBehaviour
     [Header("Weapon Wheel")]
     public int myWeaponID = 3;
 
-    [Header("Visuals")]
-    [Tooltip("The visual sprite child of the shotgun")]
     public GameObject weaponModel;
 
     [Header("Shotgun Attributes")]
@@ -15,7 +13,6 @@ public class Shotgun : MonoBehaviour
     public GameObject bulletPrefab;
     public float fireRate = 0.8f;
 
-    [Header("Pellet Settings")]
     public int pelletCount = 5;
     public float spreadAngle = 15f;
 
@@ -47,8 +44,17 @@ public class Shotgun : MonoBehaviour
 
     private void Update()
     {
-        if (WeaponWheelController.weaponID != myWeaponID) return;
+        bool isActiveWeapon = (WeaponWheelController.weaponID == myWeaponID);
+
+        if (weaponModel != null && weaponModel.activeSelf != isActiveWeapon)
+        {
+            weaponModel.SetActive(isActiveWeapon);
+        }
+
+        if (!isActiveWeapon) return;
         if (Time.timeScale == 0f) return;
+
+        AimAtMouse();
 
         if (IsFireButtonPressed())
         {
@@ -58,6 +64,44 @@ public class Shotgun : MonoBehaviour
                 nextFireTime = Time.realtimeSinceStartup + fireRate;
             }
         }
+    }
+
+    private void AimAtMouse()
+    {
+        if (Mouse.current == null) return;
+
+        Vector2 mousePixelPos = Mouse.current.position.ReadValue();
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePixelPos.x, mousePixelPos.y, transform.position.z));
+        mouseWorldPos.z = transform.position.z;
+
+        Vector2 lookDirection = ((Vector2)mouseWorldPos - (Vector2)transform.position).normalized;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+
+        float parentXScale = transform.parent != null ? transform.parent.lossyScale.x : 1f;
+
+        if (parentXScale < 0f)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), Mathf.Abs(transform.localScale.y), transform.localScale.z);
+        }
+        else
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), Mathf.Abs(transform.localScale.y), transform.localScale.z);
+        }
+
+        if (weaponModel != null)
+        {
+            Vector3 modelScale = weaponModel.transform.localScale;
+
+            if (mouseWorldPos.x < transform.position.x)
+            {
+                weaponModel.transform.localScale = new Vector3(modelScale.x, -Mathf.Abs(modelScale.y), modelScale.z);
+            }
+            else
+            {
+                weaponModel.transform.localScale = new Vector3(modelScale.x, Mathf.Abs(modelScale.y), modelScale.z);
+            }
+        }
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 
     private bool IsFireButtonPressed()
@@ -85,4 +129,5 @@ public class Shotgun : MonoBehaviour
             Instantiate(bulletPrefab, firePoint.position, pelletRotation);
         }
     }
+    
 }
