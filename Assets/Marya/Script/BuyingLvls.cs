@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class Buying : MonoBehaviour
+public class BuyingLvls : MonoBehaviour
 {
     [Header("CurrentLvl")]
     public int HealthLvl = 1;
