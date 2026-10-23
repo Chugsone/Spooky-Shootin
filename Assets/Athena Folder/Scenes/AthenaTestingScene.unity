@@ -810,6 +810,8 @@ MonoBehaviour:
   numberOfEnemies: 3
   currentWave: 1
   enemyPerWaveIncrease: 1
+  endBeforeWave: 26
+  sceneName: Win Screen
   minX: -10
   maxX: 10
   minY: -5
