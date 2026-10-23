@@ -8,7 +8,6 @@ public class WeaponWheelController : MonoBehaviour
     [Header("Input Settings")]
     public InputAction toggleWheelAction;
 
-    [Header("UI & Animation")]
     public Animator anim;
     public Image selectedItem;
     public Sprite noImage;

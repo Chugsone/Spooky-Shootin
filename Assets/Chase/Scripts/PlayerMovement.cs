@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
 
     [Header("Dash")]
-    [SerializeField] float dashSpeed = 20f; 
-    [SerializeField] float dashDuration = 0.2f; 
+    [SerializeField] float dashSpeed = 20f;
+    [SerializeField] float dashDuration = 0.2f;
     [SerializeField] float dashCooldown = 3f;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -18,23 +18,24 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private bool isDashing;
-    private bool canDash = true; 
+    private bool canDash = true;
 
-    private PlayerCombat playerCombat;
+    private Dagger dagger;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        playerCombat = GetComponent<PlayerCombat>();
+        dagger = GetComponent<Dagger>();
 
         if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
-
         if (animator == null) animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (rb.linearVelocityX != 0 || rb.linearVelocityY != 0)
+        if ((dagger != null && dagger.isLunging) || isDashing) return;
+
+        if (Mathf.Abs(rb.linearVelocityX) > 0.01f || Mathf.Abs(rb.linearVelocityY) > 0.01f)
         {
             animator.Play("ZachRunAnim");
         }
@@ -42,16 +43,12 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.Play("ZachIdle");
         }
-
-        //animator.SetFloat("Speed", moveInput.sqrMagnitude);
     }
 
     private void FixedUpdate()
     {
-        // If dashing, let the coroutine control the velocity completely
-        if (isDashing) return;
+        if (isDashing || (dagger != null && dagger.isLunging)) return;
 
-        // Apply normal movement physics here
         rb.linearVelocity = moveInput * moveSpeed;
     }
 
@@ -59,7 +56,9 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
 
-        playerCombat.MeleeDirection(moveInput);
+        if (dagger != null) dagger.MeleeDirection(moveInput);
+
+        if (dagger != null && dagger.isLunging) return;
 
         if (moveInput.x > 0)
         {
@@ -73,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
-        // Trigger only when button is pressed, if not already dashing, and cooldown is over
         if (context.performed && !isDashing && canDash)
         {
             StartCoroutine(DashRoutine());
@@ -89,13 +87,10 @@ public class PlayerMovement : MonoBehaviour
         rb.gravityScale = 0f;
 
         Vector2 dashDirection = moveInput != Vector2.zero ? moveInput.normalized : Vector2.right;
-
         rb.linearVelocity = dashDirection * dashSpeed;
 
-        // Wait for the configured dash duration
         yield return new WaitForSeconds(dashDuration);
 
-        // Reset movement states
         rb.gravityScale = originalGravity;
         isDashing = false;
 
