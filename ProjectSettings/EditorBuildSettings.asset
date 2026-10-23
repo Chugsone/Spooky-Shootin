@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Athena Folder/Scenes/Main Menu.unity
     guid: 8379dfdaa0470a649aabbd4b04239f1b
   - enabled: 1
+    path: Assets/Chase/Scenes/0.unity
+    guid: 31c7c3b69a016d84b8eef3ef85515ed4
+  - enabled: 0
     path: Assets/Chase/Scenes/1.unity
     guid: b4232a6ff7287af49b5e432fbcf31641
   - enabled: 1
