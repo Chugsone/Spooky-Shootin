@@ -6,10 +6,12 @@ public class UpgradeData : MonoBehaviour
     // upgrade data (make sure each one matches)
     private Sprite[] UpgradeSpriteData;
     private string[] UpgradeName;
-    private string[] UpgradeInfo;
+    private int[] Affected;
+    private int[] Amount;
+    private int[] Duration;
 
 
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
