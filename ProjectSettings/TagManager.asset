@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Bullet
   - Candycorn
+  - SpawnManager
   layers:
   - Default
   - TransparentFX
