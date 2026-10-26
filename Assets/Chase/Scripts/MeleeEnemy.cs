@@ -17,6 +17,7 @@ public class MeleeEnemy : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()

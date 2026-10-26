@@ -2199,6 +2199,10 @@ MonoBehaviour:
   healthBarValueText: {fileID: 1568800968}
   maxHealth: 100
   currHealth: 0
+  backgroundImage: {fileID: 0}
+  bgNormal: {fileID: 0}
+  bgAt50: {fileID: 0}
+  bgAt25: {fileID: 0}
 --- !u!114 &1261909279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3896,7 +3900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyHealth: 1
-  itemDrop: {fileID: 0}
+  itemDrop: {fileID: 3235994496619900480, guid: 16880743b2f84c843ac3ed59afe31217, type: 3}
   minDrop: 1
   maxDrop: 5
   deathSound: {fileID: 0}
