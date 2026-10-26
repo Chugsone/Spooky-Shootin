@@ -1,10 +1,29 @@
 using UnityEngine;
+using TMPro;
 
 public class ShopmanDialouge : MonoBehaviour
 {
    
-    private string FirstWords = "Welcome to Smokey's! Buy somethin', ya bum!";
-    /* "Gosh-darned kids these days!"
+    public string FirstWords = "Welcome to Smokey's! Buy somethin', ya bum!";
+    public string[] idle_Talk = new string[]
+    {
+        "I ain't got time for meddlin'! Buy something!",
+        "These ol' bones darn been through more waves then you'll see in a thousand high noons."
+    };
+
+    [SerializeField] private TextMeshProUGUI ShopTalk; // controls what the shop keeper says
+
+    
+    public void Start() // for testing. please delete the start() area
+    {
+        ShopTalk.text = "These ol' bones darn been through more waves then you'll see in a thousand high noons.";
+    }
+
+    /* 
+     Dialouge holder for dialouge that has been thought of. can be used how ever or not at all.
+
+
+     "Gosh-darned kids these days!"
 "I was once a hunter like ya. Yer waves ain't nuthin'."
 "Pick somethin' and get out, ya meddler."
 "I don't give a gosh-darn how many enemies ya  got, this what I'm sellin!"
@@ -25,7 +44,8 @@ public class ShopmanDialouge : MonoBehaviour
 "Hurry up. The horse is here."
 "My offers stink? What is this, Zach's shop?! Don't get picky with me!"
 "This is Smokey's SHOP, not Smokey's meddle and yap place! Buy a damn upgrade!"
-"Make a sale, you bum! The bills ain't gon' pay themselves!" */
+"Make a sale, you bum! The bills ain't gon' pay themselves!" 
+    */
 
 
     public void ShopActive()
