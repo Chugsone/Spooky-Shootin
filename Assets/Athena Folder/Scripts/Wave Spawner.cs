@@ -5,10 +5,11 @@ public class WaveSpawner : MonoBehaviour
 {
     public GameObject enemyOne;
     public GameObject enemyTwo;
-    public GameObject bossEnemy;
+    //public GameObject bossEnemy;
 
-    public int numberOfBosses = 0;
-    public int numberOfEnemies = 3;
+    //public int numberOfBosses = 0;
+    public int numberOfEnemies = 2;
+    public int currentNumberOfEnemies = 2;
     public int currentWave = 1;
     public int enemyPerWaveIncrease = 2;
     public int endBeforeWave = 26;
@@ -25,6 +26,17 @@ public class WaveSpawner : MonoBehaviour
 
     [SerializeField] private AudioClip newWaveSound;
 
+        void Update()
+        {
+            if(currentNumberOfEnemies == 0)
+            {
+                Debug.Log("New Wave");
+            //when Marya is finished with the upgrades, replace the calling the SpawnWave function with the shop menu
+                SpawnWave();
+            }
+
+        }
+
     public void SpawnWave()
     {
         float xPos, yPos;
@@ -35,14 +47,14 @@ public class WaveSpawner : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName);
         }
-        else if(currentWave % 5 == 0)
-        {
-            numberOfBosses++;
-            for (int i = 0; i < numberOfBosses; i++)
-            {
-                Instantiate(bossEnemy, gameObject.transform.position, Quaternion.identity);
-            }
-        }
+        //else if(currentWave % 5 == 0)
+        //{
+        //    numberOfBosses++;
+        //    for (int i = 0; i < numberOfBosses; i++)
+        //    {
+        //        Instantiate(bossEnemy, gameObject.transform.position, Quaternion.identity);
+        //    }
+        //}
         else
         {
         for (int i =0; i < numberOfEnemies; i++)
@@ -61,6 +73,7 @@ public class WaveSpawner : MonoBehaviour
             {
                 Instantiate(enemyOne, pos, Quaternion.identity);
             }
+                currentNumberOfEnemies++;
         }
 
         }
@@ -68,5 +81,6 @@ public class WaveSpawner : MonoBehaviour
 
         numberOfEnemies = numberOfEnemies + enemyPerWaveIncrease;
         currentWave++;
+
     }
 }
