@@ -16,7 +16,7 @@ public class ShopmanDialouge : MonoBehaviour
     
     public void Start() // for testing. please delete the start() area
     {
-        ShopTalk.text = "These ol' bones darn been through more waves then you'll see in a thousand high noons.";
+        ShopTalk.text = "Welcome to Smokey's! Buy somethin', ya bum!";
     }
 
     /* 
@@ -47,7 +47,7 @@ public class ShopmanDialouge : MonoBehaviour
 "Make a sale, you bum! The bills ain't gon' pay themselves!" 
     */
 
-
+    // this is just for my code if i ever get to him just saying multiple things. you can delete this if we dont get there
     public void ShopActive()
     {
 
