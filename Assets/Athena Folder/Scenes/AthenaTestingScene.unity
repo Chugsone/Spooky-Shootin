@@ -424,6 +424,7 @@ MonoBehaviour:
   dashCooldown: 1
   spriteRenderer: {fileID: 663263918}
   animator: {fileID: 663263911}
+  dashSound: {fileID: 0}
 --- !u!114 &663263913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,6 +821,7 @@ MonoBehaviour:
   minY: -5
   maxY: 5
   newWaveSound: {fileID: 8300000, guid: 5448585911e89b848a111a1f79fd976d, type: 3}
+  endOfWaveSound: {fileID: 0}
 --- !u!4 &695490853
 Transform:
   m_ObjectHideFlags: 0
@@ -971,84 +973,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 663263919}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1660264762
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 653164837846441530, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.076575
-      objectReference: {fileID: 0}
-    - target: {fileID: 653164837846441530, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.19348311
-      objectReference: {fileID: 0}
-    - target: {fileID: 653164837846441530, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653164837846441530, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 653164837846441530, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653164837846441530, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653164837846441530, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653164837846441530, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653164837846441530, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653164837846441530, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405584053004877293, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4559021731698914889, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_Size.x
-      value: 0.95172954
-      objectReference: {fileID: 0}
-    - target: {fileID: 4559021731698914889, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_Size.y
-      value: 4.3398476
-      objectReference: {fileID: 0}
-    - target: {fileID: 4559021731698914889, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.03171122
-      objectReference: {fileID: 0}
-    - target: {fileID: 4559021731698914889, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.38053232
-      objectReference: {fileID: 0}
-    - target: {fileID: 9073103068735287969, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-      propertyPath: m_Name
-      value: MeleeEnemy 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4559021731698914889, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
 --- !u!1 &1731852492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,4 +1331,3 @@ SceneRoots:
   - {fileID: 2082382231}
   - {fileID: 695490853}
   - {fileID: 663263919}
-  - {fileID: 1660264762}

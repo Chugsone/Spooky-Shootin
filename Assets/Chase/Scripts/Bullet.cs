@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     public float lifeTime = 3f; 
 
     private Rigidbody2D rb;
+    [SerializeField] private AudioClip hitSound;
+
 
     private void Start()
     {
@@ -34,6 +36,7 @@ public class Bullet : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player Hit!");
+            AudioSource.PlayClipAtPoint(hitSound, transform.position, 1f);
             Destroy(gameObject);
         }
         else if (other.CompareTag("Obstacle") || other.CompareTag("Wall"))
