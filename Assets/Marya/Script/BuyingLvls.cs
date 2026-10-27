@@ -49,6 +49,19 @@ public class BuyingLvls : MonoBehaviour
     [SerializeField] private TextMeshProUGUI InputPistolRangeLvl;
     [SerializeField] private TextMeshProUGUI InputShotgunRangeLvl;
 
+
+    [Header("Price input for text")]
+
+
+    [SerializeField] private TextMeshProUGUI InputHealthPrice;
+    [SerializeField] private TextMeshProUGUI InputSpeedPrice;
+
+    [SerializeField] private TextMeshProUGUI InputPistolMeleePrice;
+    [SerializeField] private TextMeshProUGUI InputShotgunMeleePrice;
+
+    [SerializeField] private TextMeshProUGUI InputPistolRangePrice;
+    [SerializeField] private TextMeshProUGUI InputShotgunRangePrice;
+
     private void Update()
     {
         // keeps lvls within a certain range
@@ -62,7 +75,7 @@ public class BuyingLvls : MonoBehaviour
         ShotgunRangeLvl = Mathf.Clamp(ShotgunRangeLvl, 1, MaxShotgunRangeLvl);
 
 
-        // input text
+        // input lvl text
         InputHealthLvl.text = (HealthLvl-1).ToString() + "/" + (MaxHealthLvl - 1);
         InputSpeedLvl.text = (SpeedLvl-1).ToString() + "/" + (MaxSpeedLvl - 1);
 
@@ -71,6 +84,16 @@ public class BuyingLvls : MonoBehaviour
 
         InputPistolRangeLvl.text = (PistolRangeLvl - 1).ToString() + "/" + (MaxPistolRangeLvl - 1);
         InputShotgunRangeLvl.text = (ShotgunRangeLvl - 1).ToString() + "/" + (MaxShotgunRangeLvl - 1);
+
+        // input Price text
+        InputHealthPrice.text = HealthLvl.ToString();
+        InputSpeedPrice.text = SpeedLvl.ToString();
+
+        InputPistolMeleePrice.text = PistolDmgLvl.ToString();
+        InputShotgunMeleePrice.text = ShotgunDmgLvl.ToString();
+
+        InputPistolRangePrice.text = PistolRangeLvl.ToString();
+        InputShotgunRangePrice.text = ShotgunRangeLvl.ToString();
     }
 
     
