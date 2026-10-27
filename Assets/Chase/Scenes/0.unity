@@ -1108,6 +1108,7 @@ GameObject:
   - component: {fileID: 484678291}
   - component: {fileID: 484678290}
   - component: {fileID: 484678289}
+  - component: {fileID: 484678292}
   m_Layer: 0
   m_Name: Square (3)
   m_TagString: Wall
@@ -1236,6 +1237,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &484678292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484678288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43dccb8f8f227445a96cd78440b5515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Walls
 --- !u!1 &635256528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,6 +1447,7 @@ GameObject:
   - component: {fileID: 641728442}
   - component: {fileID: 641728441}
   - component: {fileID: 641728440}
+  - component: {fileID: 641728443}
   m_Layer: 0
   m_Name: Square (2)
   m_TagString: Wall
@@ -1562,6 +1576,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &641728443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641728439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43dccb8f8f227445a96cd78440b5515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Walls
 --- !u!1 &748189934
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,6 +2151,7 @@ GameObject:
   - component: {fileID: 1052517487}
   - component: {fileID: 1052517486}
   - component: {fileID: 1052517485}
+  - component: {fileID: 1052517488}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Wall
@@ -2253,6 +2280,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1052517488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052517484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43dccb8f8f227445a96cd78440b5515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Walls
 --- !u!1 &1206898127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3522,6 +3561,7 @@ GameObject:
   - component: {fileID: 1600709795}
   - component: {fileID: 1600709794}
   - component: {fileID: 1600709793}
+  - component: {fileID: 1600709796}
   m_Layer: 0
   m_Name: Square
   m_TagString: Wall
@@ -3650,6 +3690,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1600709796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600709792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43dccb8f8f227445a96cd78440b5515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Walls
 --- !u!1 &1628627686
 GameObject:
   m_ObjectHideFlags: 0
