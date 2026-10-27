@@ -25,14 +25,16 @@ public class WaveSpawner : MonoBehaviour
     public float maxY = 5f;
 
     [SerializeField] private AudioClip newWaveSound;
+    [SerializeField] private AudioClip endOfWaveSound;
 
-        void Update()
+    void Update()
         {
             if(currentNumberOfEnemies == 0)
             {
-                Debug.Log("New Wave");
+                Debug.Log("Wave Over");
+            AudioSource.PlayClipAtPoint(endOfWaveSound, transform.position, 1f);
             //when Marya is finished with the upgrades, replace the calling the SpawnWave function with the shop menu
-                SpawnWave();
+            SpawnWave();
             }
 
         }

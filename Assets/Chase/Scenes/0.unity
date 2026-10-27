@@ -1094,6 +1094,7 @@ MonoBehaviour:
   dashCooldown: 1
   spriteRenderer: {fileID: 1261909276}
   animator: {fileID: 1261909280}
+  dashSound: {fileID: 8300000, guid: e884a34d532d24c43b141a1d96171400, type: 3}
 --- !u!114 &1261909273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,6 +1403,7 @@ Transform:
   - {fileID: 1693882181}
   - {fileID: 224238572}
   - {fileID: 748189935}
+  - {fileID: 1628627689}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1261909278
@@ -2103,6 +2105,7 @@ MonoBehaviour:
   minY: -5
   maxY: 5
   newWaveSound: {fileID: 8300000, guid: 5448585911e89b848a111a1f79fd976d, type: 3}
+  endOfWaveSound: {fileID: 8300000, guid: c8288d0c01737f940b11f5d8b0fea77f, type: 3}
 --- !u!4 &1628627689
 Transform:
   m_ObjectHideFlags: 0
@@ -2111,12 +2114,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628627686}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -24.429981, y: 2.3700318, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1261909277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1693882178
 GameObject:
@@ -2793,4 +2796,3 @@ SceneRoots:
   - {fileID: 641728442}
   - {fileID: 484678291}
   - {fileID: 4380710150145521725}
-  - {fileID: 1628627689}

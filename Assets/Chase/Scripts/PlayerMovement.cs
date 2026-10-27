@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator animator;
 
+    [SerializeField] private AudioClip dashSound;
+
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private bool isDashing;
@@ -74,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed && !isDashing && canDash)
         {
+            AudioSource.PlayClipAtPoint(dashSound, transform.position, 1f);
             StartCoroutine(DashRoutine());
         }
     }
