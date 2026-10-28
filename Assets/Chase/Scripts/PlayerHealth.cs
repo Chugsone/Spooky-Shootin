@@ -7,16 +7,19 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public BuyingLvls BuyLvls;
+    private int affectedMaxHealth;
+
     [SerializeField] private LayerMask targetLayers;
     public Slider healthBarSlider;
     public TextMeshProUGUI healthBarValueText;
 
-    public int maxHealth = 100; 
+    public int maxHealth = 100;
     public int currHealth;
 
     [Header("Background Swapping")]
     public Image backgroundImage;
-    public Sprite bgNormal;      
+    public Sprite bgNormal;
     public Sprite bgAt50;
     public Sprite bgAt25;
 
@@ -32,13 +35,22 @@ public class PlayerHealth : MonoBehaviour
         CheckBackgroundSwap();
     }
 
+    //  Max health affected by lvl
+    public void Update()
+    {
+        affectedMaxHealth = Mathf.RoundToInt(BuyLvls.HealthLvl / 2);
+        maxHealth = affectedMaxHealth + 100;
+    }
+
+
+    //
     private void TakeDamage(int damage)
     {
         currHealth -= damage;
         currHealth = Mathf.Max(0, currHealth);
 
-        UpdateHealthUI();     
-        CheckBackgroundSwap(); 
+        UpdateHealthUI();
+        CheckBackgroundSwap();
 
         if (flashCoroutine != null) StopCoroutine(flashCoroutine);
         flashCoroutine = StartCoroutine(FlashRed());
@@ -113,4 +125,9 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(1);
         }
     }
+
+    public void ResetHealth()
+        {
+        currHealth = maxHealth;
+        }
 }

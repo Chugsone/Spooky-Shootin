@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class WaveSpawner : MonoBehaviour
 {
+    [Header("Marya")]
+    public SetActive SetAtv; //Set active script
+
+    [Header ("Everyone else")]
     public GameObject enemyOne;
     public GameObject enemyTwo;
     //public GameObject bossEnemy;
@@ -34,7 +38,10 @@ public class WaveSpawner : MonoBehaviour
                 Debug.Log("Wave Over");
             AudioSource.PlayClipAtPoint(endOfWaveSound, transform.position, 1f);
             //when Marya is finished with the upgrades, replace the calling the SpawnWave function with the shop menu
-            SpawnWave();
+
+            SetAtv.Activate();
+
+            //SpawnWave();
             }
 
         }

@@ -86,6 +86,7 @@ public class BuyingLvls : MonoBehaviour
         InputShotgunRangeLvl.text = (ShotgunRangeLvl - 1).ToString() + "/" + (MaxShotgunRangeLvl - 1);
 
         // input Price text
+
         InputHealthPrice.text = HealthLvl.ToString();
         InputSpeedPrice.text = SpeedLvl.ToString();
 
@@ -94,6 +95,17 @@ public class BuyingLvls : MonoBehaviour
 
         InputPistolRangePrice.text = PistolRangeLvl.ToString();
         InputShotgunRangePrice.text = ShotgunRangeLvl.ToString();
+
+
+        // update prices
+        HealthLvlPrice = HealthLvl;
+        SpeedLvlPrice = SpeedLvl;
+
+        PistolDmgLvlPrice = PistolDmgLvl;
+        ShotgunDmgLvlPrice = ShotgunDmgLvl;
+
+        PistolRangeLvlPrice = PistolRangeLvl;
+        ShotgunRangeLvlPrice = ShotgunRangeLvl;
     }
 
     

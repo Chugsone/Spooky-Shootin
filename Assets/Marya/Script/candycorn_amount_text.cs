@@ -9,6 +9,6 @@ public class candycorn_amount_text : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Candycorn_amount.text = cm.ToString();
+        Candycorn_amount.text = cm.candyCount.ToString();
     }
 }
