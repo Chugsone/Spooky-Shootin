@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
     //  Max health affected by lvl
     public void Update()
     {
-        affectedMaxHealth = Mathf.RoundToInt(BuyLvls.HealthLvl / 2);
+        affectedMaxHealth = Mathf.RoundToInt(BuyLvls.HealthLvl * 10);
         maxHealth = affectedMaxHealth + 100;
     }
 

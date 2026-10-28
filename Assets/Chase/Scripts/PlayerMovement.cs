@@ -4,8 +4,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("get Scripts")]
+    public BuyingLvls BuyLvls;
+
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
+    int AffectedSpeed;
+
 
     [Header("Dash")]
     [SerializeField] float dashSpeed = 20f;
@@ -45,6 +50,12 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.Play("ZachIdle");
         }
+
+        // lvl affecting movement
+        AffectedSpeed = Mathf.RoundToInt(BuyLvls.HealthLvl * 3);
+
+        moveSpeed = 5 + AffectedSpeed;
+        dashSpeed = 20 + AffectedSpeed;
     }
 
     private void FixedUpdate()
