@@ -9,9 +9,9 @@ public class WaveSpawner : MonoBehaviour
     [Header ("Everyone else")]
     public GameObject enemyOne;
     public GameObject enemyTwo;
-    //public GameObject bossEnemy;
+    public GameObject bossEnemy;
 
-    //public int numberOfBosses = 0;
+    public int numberOfBosses = 0;
     public int numberOfEnemies = 2;
     public int currentNumberOfEnemies = 2;
     public int currentWave = 1;
@@ -56,14 +56,14 @@ public class WaveSpawner : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName);
         }
-        //else if(currentWave % 5 == 0)
-        //{
-        //    numberOfBosses++;
-        //    for (int i = 0; i < numberOfBosses; i++)
-        //    {
-        //        Instantiate(bossEnemy, gameObject.transform.position, Quaternion.identity);
-        //    }
-        //}
+        else if(currentWave % 5 == 0)
+        {
+            numberOfBosses++;
+            for (int i = 0; i < numberOfBosses; i++)
+            {
+                Instantiate(bossEnemy, gameObject.transform.position, Quaternion.identity);
+           }
+        }
         else
         {
         for (int i =0; i < numberOfEnemies; i++)
