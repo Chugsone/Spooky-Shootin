@@ -218,7 +218,7 @@ MonoBehaviour:
   shoulderPoint: {fileID: 1964916651699888785}
   lungeSpeed: 25
   returnSpeed: 15
-  attackCooldown: 3
+  attackCooldown: 8
   pauseAtTargetDuration: 0.05
   trackPlayerDuringLunge: 1
 --- !u!60 &479295414151155642
@@ -454,7 +454,7 @@ MonoBehaviour:
   shoulderPoint: {fileID: 395985011911935638}
   lungeSpeed: 25
   returnSpeed: 15
-  attackCooldown: 3
+  attackCooldown: 8
   pauseAtTargetDuration: 0.05
   trackPlayerDuringLunge: 1
 --- !u!60 &1405584053004877293
@@ -1599,6 +1599,7 @@ MonoBehaviour:
   itemDrop: {fileID: 3235994496619900480, guid: 16880743b2f84c843ac3ed59afe31217, type: 3}
   minDrop: 1
   maxDrop: 5
+  canTakeDamage: 1
   ws: {fileID: 0}
   deathSound: {fileID: 8300000, guid: 9d984f34061c30940b33c5c11fa34536, type: 3}
 --- !u!114 &2133212776817672496

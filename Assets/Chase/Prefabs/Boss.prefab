@@ -110,7 +110,7 @@ MonoBehaviour:
   shoulderPoint: {fileID: 8104240344594470360}
   lungeSpeed: 25
   returnSpeed: 15
-  attackCooldown: 3
+  attackCooldown: 4
   pauseAtTargetDuration: 0.05
   trackPlayerDuringLunge: 1
 --- !u!60 &200144949744486905
@@ -1425,7 +1425,7 @@ MonoBehaviour:
   shoulderPoint: {fileID: 1229722305203590126}
   lungeSpeed: 25
   returnSpeed: 15
-  attackCooldown: 3
+  attackCooldown: 4
   pauseAtTargetDuration: 0.05
   trackPlayerDuringLunge: 1
 --- !u!60 &6362628645493882048

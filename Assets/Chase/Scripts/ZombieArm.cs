@@ -51,6 +51,19 @@ public class ZombieArm : MonoBehaviour
         }
     }
 
+
+    private IEnumerator OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            yield return new WaitForSeconds(10);
+            isAttacking = false;
+        }
+    }
+
+
+
+
     private IEnumerator LungeRoutine()
     {
         isAttacking = true;

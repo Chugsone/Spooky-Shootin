@@ -6523,6 +6523,10 @@ PrefabInstance:
       value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 7492311325855081691, guid: 71b5cb3de5f5680438b249db6922c79e, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492311325855081691, guid: 71b5cb3de5f5680438b249db6922c79e, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1261909277}
@@ -6600,6 +6604,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6600692493856841694, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
+      propertyPath: attackCooldown
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600692493856841694, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1261909277}
@@ -6607,6 +6615,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1693882180}
+    - target: {fileID: 8824224569882496908, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
+      propertyPath: lungeSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824224569882496908, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
+      propertyPath: attackCooldown
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8824224569882496908, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
       propertyPath: playerTransform
       value: 
