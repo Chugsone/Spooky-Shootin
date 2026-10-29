@@ -4962,7 +4962,7 @@ MonoBehaviour:
   SetAtv: {fileID: 2125548661}
   enemyOne: {fileID: 9073103068735287969, guid: a6405fbe9e4f5e944be89aa41688f03b, type: 3}
   enemyTwo: {fileID: 432386307031414113, guid: 71b5cb3de5f5680438b249db6922c79e, type: 3}
-  bossEnemy: {fileID: 2099527526521980171}
+  bossEnemy: {fileID: 1910713875706912702, guid: 08e49bc42e1101a4ebe438ce15bb728b, type: 3}
   numberOfBosses: 0
   numberOfEnemies: 2
   currentNumberOfEnemies: 2
@@ -6616,11 +6616,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08e49bc42e1101a4ebe438ce15bb728b, type: 3}
---- !u!1 &2099527526521980171 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1910713875706912702, guid: 08e49bc42e1101a4ebe438ce15bb728b, type: 3}
-  m_PrefabInstance: {fileID: 2099527526521980170}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4380710150145521725
 PrefabInstance:
   m_ObjectHideFlags: 0

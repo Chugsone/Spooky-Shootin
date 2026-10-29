@@ -56,34 +56,34 @@ public class WaveSpawner : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName);
         }
-        else if(currentWave % 5 == 0)
+        else if(currentWave % 5 == 0 && currentWave > 4)
         {
             numberOfBosses++;
             for (int i = 0; i < numberOfBosses; i++)
             {
                 Instantiate(bossEnemy, gameObject.transform.position, Quaternion.identity);
-           }
+            }
         }
         else
         {
-        for (int i =0; i < numberOfEnemies; i++)
-        {
+            for (int i =0; i < numberOfEnemies; i++)
+            {
             randomChance = Random.Range(1, 4);
 
-            xPos = Random.Range(minX, maxX);
-            yPos = Random.Range(minY, maxY);
-            pos = new Vector2(xPos, yPos);
+                xPos = Random.Range(minX, maxX);
+                yPos = Random.Range(minY, maxY);
+                pos = new Vector2(xPos, yPos);
 
-            if (randomChance == 1)
-            {
-            Instantiate(enemyTwo, pos, Quaternion.identity);
+                if (randomChance == 1)
+                {
+                Instantiate(enemyTwo, pos, Quaternion.identity);
+                 }
+                else
+                {
+                    Instantiate(enemyOne, pos, Quaternion.identity);
+                }
+                    currentNumberOfEnemies++;
             }
-            else
-            {
-                Instantiate(enemyOne, pos, Quaternion.identity);
-            }
-                currentNumberOfEnemies++;
-        }
 
         }
 
