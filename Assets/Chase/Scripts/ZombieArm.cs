@@ -57,6 +57,7 @@ public class ZombieArm : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             yield return new WaitForSeconds(10);
+            
             isAttacking = false;
         }
     }
