@@ -548,6 +548,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1628627687}
     - target: {fileID: 3597694381493621276, guid: 429e75d89b305834cb15ef126a1d21cd, type: 3}
+      propertyPath: SpeedLvlPrice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597694381493621276, guid: 429e75d89b305834cb15ef126a1d21cd, type: 3}
+      propertyPath: HealthLvlPrice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597694381493621276, guid: 429e75d89b305834cb15ef126a1d21cd, type: 3}
       propertyPath: InputSpeedPrice
       value: 
       objectReference: {fileID: 858366820}
@@ -555,6 +563,22 @@ PrefabInstance:
       propertyPath: InputHealthPrice
       value: 
       objectReference: {fileID: 1892119690}
+    - target: {fileID: 3597694381493621276, guid: 429e75d89b305834cb15ef126a1d21cd, type: 3}
+      propertyPath: PistolDmgLvlPrice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597694381493621276, guid: 429e75d89b305834cb15ef126a1d21cd, type: 3}
+      propertyPath: ShotgunDmgLvlPrice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597694381493621276, guid: 429e75d89b305834cb15ef126a1d21cd, type: 3}
+      propertyPath: PistolRangeLvlPrice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597694381493621276, guid: 429e75d89b305834cb15ef126a1d21cd, type: 3}
+      propertyPath: ShotgunRangeLvlPrice
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3597694381493621276, guid: 429e75d89b305834cb15ef126a1d21cd, type: 3}
       propertyPath: InputPistolMeleePrice
       value: 
@@ -781,6 +805,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5204497368361314610, guid: 429e75d89b305834cb15ef126a1d21cd, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178906584399731039, guid: 429e75d89b305834cb15ef126a1d21cd, type: 3}
+      propertyPath: m_ReverseArrangement
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7874224644237947034, guid: 429e75d89b305834cb15ef126a1d21cd, type: 3}
@@ -1754,7 +1782,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.023529412, g: 0.1254902, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2093,7 +2121,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.023529412, g: 0.1254902, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2996,7 +3024,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.02161706, g: 0.122641504, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4879,7 +4907,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.023529412, g: 0.1254902, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5054,7 +5082,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.08
+  orthographic size: 14
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
