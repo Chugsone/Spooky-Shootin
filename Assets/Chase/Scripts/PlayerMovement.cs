@@ -55,7 +55,8 @@ public class PlayerMovement : MonoBehaviour
         AffectedSpeed = Mathf.RoundToInt(BuyLvls.HealthLvl * 3);
 
         moveSpeed = 5 + AffectedSpeed;
-        dashSpeed = 20 + AffectedSpeed;
+        dashSpeed = 25 + AffectedSpeed;
+        Debug.Log(dashSpeed);
     }
 
     private void FixedUpdate()
