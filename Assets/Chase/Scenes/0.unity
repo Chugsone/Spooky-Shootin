@@ -3752,7 +3752,7 @@ MonoBehaviour:
   healthBarValueText: {fileID: 1568800968}
   maxHealth: 100
   currHealth: 0
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: 1753538643}
   bgNormal: {fileID: 7305030117435453708, guid: 17f091c3dfd53204480baa3d6827da6f, type: 3}
   bgAt50: {fileID: -1072584610453888357, guid: d1d25c404a9a5ce4587d37eeba123763, type: 3}
   bgAt25: {fileID: 7436367402671473328, guid: 57aa4aeb5374c2c4bb2a9201fc7519a1, type: 3}

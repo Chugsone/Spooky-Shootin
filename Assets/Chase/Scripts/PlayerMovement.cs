@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
         moveSpeed = 5 + AffectedSpeed;
         dashSpeed = 25 + AffectedSpeed;
-        Debug.Log(dashSpeed);
+     
     }
 
     private void FixedUpdate()
